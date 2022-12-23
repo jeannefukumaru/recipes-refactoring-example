@@ -36,10 +36,10 @@ def download_ames_housing():
     X = X[features]
     X, y = shuffle(X, y, random_state=0)
 
-    X = X[:600]
+    X = X.iloc[:600, 0:5]
     y = np.log(y[:600])
-    X.to_csv("ames_X.csv", index=False)
-    y.to_csv("ames_y.csv", index=False)
+    ames = pd.concat([X, y], axis=1)
+    ames.to_csv("./data/ames.csv", index=False)
     print("datasets saved")
     
 

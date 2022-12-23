@@ -13,8 +13,5 @@ def estimator_fn(estimator_params: Dict[str, Any] = {}):
     The estimator's input and output signatures should be compatible with scikit-learn
     estimators.
     """
-    #
-    # FIXME::OPTIONAL: return a scikit-learn-compatible regression estimator with fine-tuned
-    #                  hyperparameters.
-
-    raise NotImplementedError
+    from sklearn.linear_model import LassoCV
+    return LassoCV()
